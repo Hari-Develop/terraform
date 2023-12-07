@@ -1,7 +1,23 @@
 resource "aws_instance" "test" {
-  ami = "ami-03265a0778a880afb"
-  instance_type = "t2.micro"
-  tags = {
-    name = "test"
+  ami = var.ami
+  instance_type = var.instance_type
+  tags = var.name["tags"]
+}
+
+variable "ami" {
+  default = "ami-03265a0778a880afb"
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+
+variable "name" {
+  default = {
+    tags = {
+      name = "test"
+    }
+
   }
 }
+
