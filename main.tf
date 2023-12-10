@@ -1,12 +1,6 @@
-resource "aws_instance" "test" {
-  for_each = var.components
-  ami = var.ami
-  instance_type = var.instance_type
-  tags = {
-    Name = each.value["name"]
-  }
+module "vpc" {
+  source = "./modules/vpc"
+  vpc-cidr-block = var.vpc-cidr-block
+  env = var.env
+  tags = var.tags
 }
-
-
-
-
