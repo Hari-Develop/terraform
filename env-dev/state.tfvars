@@ -1,4 +1,4 @@
 
     bucket         = "terraform-backend-file"
-    key            = "expense/file/terraform.tfstate"
+    key            = "expense/dev/terraform.tfstate"
     region         = "us-east-1"
